@@ -29,7 +29,7 @@ function Register() {
 
       navigate("/login");
     } catch (error) {
-      alert(error.response?.data?.message || "Registration failed");
+      toast.error(error.response?.data?.message || "Registration failed");
     }
   };
 
