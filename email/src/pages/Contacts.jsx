@@ -81,7 +81,7 @@ toast.error("Import failed");
     console.log(err);
   }
 };
- const handleroute = ()=>{
+ const handleRoute = ()=>{
   Navigate("/dashboard")
  }
 
@@ -167,7 +167,7 @@ toast.error("Import failed");
     onChange={(e) => setFile(e.target.files[0])}
     className="border p-2 rounded"
   />
-<div>
+<div className="">
   <button
   type="button"
     onClick={handleImport}
@@ -177,7 +177,7 @@ toast.error("Import failed");
   </button>
     <button
   type="button"
-    onClick={handleroute}
+    onClick={handleRoute}
     className="bg-green-600 text-white px-4 py-2 rounded ml-3"
   >
     Go to dashboard
