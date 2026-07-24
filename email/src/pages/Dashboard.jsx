@@ -2,6 +2,7 @@ import { useState ,useEffect} from "react";
 import Sidebar from "../components/Sidebar";
 import { FaUsers, FaEnvelope, FaBullhorn } from "react-icons/fa";
  import axios from "axios";
+ import API from "../services/api"
 function Dashboard() {
 
     const [stats,setStats] = useState({
@@ -14,16 +15,9 @@ totalContacts:0,
     useEffect(() => {
   const fetchStats = async () => {
     try {
-      const token = localStorage.getItem("token");
+      
 
-      const response = await axios.get(
-        "http://localhost:4000/dashboard",
-        {
-          headers: {
-            Authorization:  ` Bearer ${token}` ,
-          },
-        }
-      );
+      const response = await API.get('/dashboard')
       console.log("response",response)
 
      setStats(response.data.stats)
