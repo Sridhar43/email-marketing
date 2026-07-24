@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:4000/api",
+  baseURL: "https://email-marketing-mwp9.onrender.com",
 });
 
 // Automatically attach JWT token
