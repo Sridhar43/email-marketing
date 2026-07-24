@@ -19,7 +19,10 @@ const app = express();
 app.use(
   cors(
     {
-      origin:"https://email-marketing-mwp9.onrender.com",
+      origin:["https://email-marketing-mwp9.onrender.com",
+      'http://localhost:3000',
+
+      ],
       credentials:true,
     }
   )
