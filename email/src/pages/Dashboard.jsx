@@ -3,7 +3,9 @@ import Sidebar from "../components/Sidebar";
 import { FaUsers, FaEnvelope, FaBullhorn } from "react-icons/fa";
  import axios from "axios";
  import API from "../services/api"
+ import { useNavigate, Link } from "react-router-dom";
 function Dashboard() {
+    const navigate = useNavigate();
 
     const [stats,setStats] = useState({
 totalContacts:0,

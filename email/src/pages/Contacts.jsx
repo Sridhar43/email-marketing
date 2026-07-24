@@ -81,6 +81,14 @@ toast.error("Import failed");
     console.log(err);
   }
 };
+ const handleroute = ()=>{
+  Navigate("/dashboard")
+ }
+
+
+
+
+
   const handleEdit = (contact) => {
   setEditId(contact._id);
 
@@ -159,7 +167,7 @@ toast.error("Import failed");
     onChange={(e) => setFile(e.target.files[0])}
     className="border p-2 rounded"
   />
-
+<div>
   <button
   type="button"
     onClick={handleImport}
@@ -167,6 +175,16 @@ toast.error("Import failed");
   >
     Import CSV
   </button>
+    <button
+  type="button"
+    onClick={handleroute}
+    className="bg-green-600 text-white px-4 py-2 rounded ml-3"
+  >
+    Go to dashboard
+  </button>
+</div>
+
+
 </div>
       </form>
 
@@ -196,6 +214,8 @@ toast.error("Import failed");
               Delete
             </button>
          </div>
+
+       
           
           </div>
         ))}
