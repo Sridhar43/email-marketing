@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import {toast} from "react-hot-toast"
+import { useNavigate, Link } from "react-router-dom";
 import {
   getContacts,
   createContact,
@@ -9,6 +10,7 @@ importContacts
 } from "../services/api";
 
 function Contacts() {
+    const navigate = useNavigate();
   const [contacts, setContacts] = useState([]);
   const [form, setForm] = useState({
     name: "",
@@ -81,7 +83,7 @@ toast.error("Import failed");
     console.log(err);
   }
 };
- const handleRoute = ()=>{
+ const handleRoute = (e)=>{
   navigate("/dashboard")
  }
 
