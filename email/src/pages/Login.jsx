@@ -22,7 +22,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      const response = await API.post("api/auth/login", formData);
+      const response = await API.post("/auth/login", formData);
 
       localStorage.setItem("token", response?.data?.token);
 
@@ -38,7 +38,7 @@ function Login() {
 
   return (
     <div className="min-h-screen bg-slate-100 flex items-center justify-center">
-      <div className="bg-white shadow-xl rounded-xl p-8 w-[400px]">
+      <div className="bg-white shadow-xl rounded-xl p-8 w -[400px] ">
 
         <h1 className="text-3xl font-bold text-center mb-2">
           Email Marketing
