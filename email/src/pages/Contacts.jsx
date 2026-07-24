@@ -82,7 +82,7 @@ toast.error("Import failed");
   }
 };
  const handleRoute = ()=>{
-  Navigate("/dashboard")
+  navigate("/dashboard")
  }
 
 
