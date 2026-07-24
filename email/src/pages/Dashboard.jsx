@@ -20,7 +20,7 @@ totalContacts:0,
       const response = await API.get('/dashboard')
       console.log("response",response)
 
-     setStats(response.data.stats)
+     setStats(response?.data?.stats)
     } catch (error) {
       console.log(error);
     }
