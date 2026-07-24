@@ -17,7 +17,7 @@ totalContacts:0,
       const token = localStorage.getItem("token");
 
       const response = await axios.get(
-        "http://localhost:4000/api/dashboard",
+        "http://localhost:4000/dashboard",
         {
           headers: {
             Authorization:  ` Bearer ${token}` ,
