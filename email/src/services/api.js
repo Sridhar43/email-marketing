@@ -63,9 +63,9 @@ export const deleteAudience = (id) =>
 export const getCampaigns = () => API.get("/campaign/all");
 
 
-export const sendCampaign =(id)=>{
-  API.post(`/campaign/send/${id}`);
-}
+export const sendCampaign =(id)=>
+API.post(`/campaign/send/${id}`);
+
 export const deleteCampaign=(id)=>{
   API.delete(`/campaign/delete/${id}`);
 }

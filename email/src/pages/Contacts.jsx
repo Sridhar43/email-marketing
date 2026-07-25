@@ -169,9 +169,9 @@ toast.error("Import failed");
     onChange={(e) => setFile(e.target.files[0])}
     className="border p-2 rounded"
   />
-<div className="">
+<div className="gap-5">
   <button
-  type="button"
+  type="button"                                              
     onClick={handleImport}
     className="bg-green-600 text-white px-4 py-2 rounded ml-3"
   >

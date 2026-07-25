@@ -35,9 +35,11 @@ const createCampaign = async (req, res) => {
 
 const sendCampaign = async (req, res) => {
   try {
+    console.log("send backend function called")
     const { id } = req.params;
 
     const campaign = await Campaign.findById(id);
+    console.log("camaign con",campaign)
 
     if (!campaign) {
       return res.status(404).json({
@@ -58,6 +60,7 @@ const sendCampaign = async (req, res) => {
 
     campaign.status = "Sent";
     await campaign.save();
+    console.log("saved",campaign)
 
     return res.status(200).json({
       success: true,

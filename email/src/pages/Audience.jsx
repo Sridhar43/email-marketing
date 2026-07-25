@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   getAudiences,
   createAudience,
@@ -8,6 +9,8 @@ import {
 } from "../services/api";
 
 function Audience() {
+
+  const navigate = useNavigate()
   const [audiences, setAudiences] = useState([]);
   const [form, setForm] = useState({
     name: "",
@@ -24,6 +27,12 @@ function Audience() {
     console.log(err);
   }
 };
+
+const handleClick =(e)=>{
+  navigate("/dashboard")
+
+}
+
 
   const fetchAudiences = async () => {
     try {
@@ -120,12 +129,18 @@ function Audience() {
   ))}
 </select>
   
-        <button className="bg-blue-600 text-white px-5 py-2 rounded">
+      <div className="flex flex-row gap-4">
+   <button className="bg-blue-600 text-white px-5 py-2 rounded">
           Create Audience
         </button>
-            
-             
+      
+     <button onClick={handleClick}  className="bg-blue-600 gap-1.5 hover:po text-white px-5 py-2 rounded">
+        Go to Dashboard
+        </button>
+      </div>
+     
       </form>
+       
 
       {audiences.map((audience) => (
         <div

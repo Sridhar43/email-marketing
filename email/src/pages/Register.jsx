@@ -34,12 +34,12 @@ function Register() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+    <div className=" flex justify-center items-center min-h-screen bg-gray-100 ">
       <form
         onSubmit={handleSubmit}
         className="bg-white p-8 rounded-lg shadow-lg w-96"
       >
-        <h1 className="text-3xl font-bold mb-6 text-center">
+        <h1 className="text-3xl font-bold mb-6 text-blue-600 text-center">
           Register
         </h1>
 
