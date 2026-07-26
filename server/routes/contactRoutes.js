@@ -10,7 +10,7 @@ const {
 } = require("../controllers/contactController");
 
 const { auth } = require("../middlewares/authMiddlewares");
-const upload = require("../middlewares/upload");
+import  upload from "../middlewares/upload";
 
 router.post("/create", auth, createContact);
 router.get("/all", auth, getAllContacts);
