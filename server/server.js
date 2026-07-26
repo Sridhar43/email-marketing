@@ -33,11 +33,11 @@ app.use(cors( )
 app.use(express.json());
 
 
- const dashboardRoutes = require("./routes/dashboardRoutes");
+ import  dashboardRoutes from "./routes/dashboardRoutes";
    app.use("/api/dashboard",dashboardRoutes);
 
 //login and signup a dn middlewares
-const authRoutes = require("./routes/authRoutes");
+import  authRoutes from  "./routes/authRoutes";
 app.use("/api/auth", authRoutes);
 
 // contacts
