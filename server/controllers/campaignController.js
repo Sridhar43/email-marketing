@@ -32,7 +32,7 @@ const createCampaign = async (req, res) => {
   }
 };
 
-import { sendEmail } from "../utils/sendEmail"; // or your path
+import { sendEmail } from "../utils/sendEmail.js"; // or your path
 
 const sendCampaign = async (req, res) => {
   try {
