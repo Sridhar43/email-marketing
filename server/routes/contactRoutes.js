@@ -9,7 +9,7 @@ const {
   importContacts,
 } = require("../controllers/contactController.js");
 
-import   auth  from "../middlewares/authMiddlewares.js";
+import   {auth}  from "../middlewares/authMiddlewares.js";
 import  upload from "../middlewares/upload.js";
 
 router.post("/create", auth, createContact);
