@@ -1,13 +1,13 @@
 import express  from "express";
 const router = express.Router();
 
-const {
+import {
   createContact,
   getAllContacts,
   updateContact,
   deleteContact,
   importContacts,
-} = require("../controllers/contactController.js");
+} from "../controllers/contactController.js";
 
 import   {auth}  from "../middlewares/authMiddlewares.js";
 import  upload from "../middlewares/upload.js";
