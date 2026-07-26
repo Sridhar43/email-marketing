@@ -41,7 +41,7 @@ const authRoutes = require("./routes/authRoutes");
 app.use("/api/auth", authRoutes);
 
 // contacts
-const contactRoutes=require("./routes/contactRoutes");
+import  contactRoutes from "./routes/contactRoutes.";
 app.use("/api/contact",contactRoutes);
 
 // audience
