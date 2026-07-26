@@ -2,10 +2,10 @@ const dns =require('dns');
 dns.setServers(['8.8.8.8','1.1.1.1']);
 
 
-const express = require("express");
+import  express from ("express");
 const dotenv = require("dotenv");
-const connectDB = require("./config/database");
- const cors =require("cors")
+import connectDB from  require("./config/database.js");
+ import cors from ("cors")
 
  
 
@@ -41,19 +41,19 @@ const authRoutes = require("./routes/authRoutes");
 app.use("/api/auth", authRoutes);
 
 // contacts
-import  contactRoutes from "./routes/contactRoutes.";
+import  contactRoutes from "./routes/contactRoutes.js";
 app.use("/api/contact",contactRoutes);
 
 // audience
-const audienceRoutes=require ("./routes/audienceRoutes");
+import  audienceRoutes from  "./routes/audienceRoutes.js";
 app.use("/api/audience",audienceRoutes)
 
 //compaign routes
-const campaignRoutes=require("./routes/campaignRoutes");
+import  campaignRoutes from "./routes/campaignRoutes.js";
 app.use("/api/campaign",campaignRoutes)
 
 //email
-const emailRoutes =require("./routes/emailRoutes");
+import  emailRoutes from  "./routes/emailRoutes.js";
 app.use("/api/email",emailRoutes);
 
 
