@@ -4,4 +4,4 @@ const storage= multer.memoryStorage()
 const upload=multer({
     storage,
 })
-export { upload }
+export default upload
