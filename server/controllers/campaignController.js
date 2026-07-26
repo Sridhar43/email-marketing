@@ -1,6 +1,6 @@
-const Campaign = require("../models/Campaign"); // Make sure model path & casing match
- const Audience=require("../models/Audience")
- const Contact=require("../models/Contact")
+const Campaign = require("../models/Campaign.js"); // Make sure model path & casing match
+ const Audience=require("../models/Audience.js")
+ const Contact=require("../models/Contact.js")
 
 import  sendEmail from "../utils/sendEmail.js"; // or your path
 // @desc    Create a new campaign
@@ -138,6 +138,7 @@ const sendCampaign = async (req, res) => {
     });
   }
 };
+*/}
 const getAllCampaigns = async (req, res) => {
   try {
     const campaigns = await Campaign.find({
@@ -158,7 +159,7 @@ const getAllCampaigns = async (req, res) => {
       message: "Server Error",
     });
   }
-}; */}
+}; 
  const updateCampaign = async (req, res) => {
   try {
     const { id } = req.params;
