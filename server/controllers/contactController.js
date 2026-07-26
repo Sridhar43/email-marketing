@@ -1,6 +1,6 @@
 import  Contact from "../models/Contact.js";
 
-const streamifier = require("streamifier");
+import  streamifier from  "streamifier";
 
 // Added 'const' to declare the variable properly
 const createContact = async (req, res) => {
