@@ -1,4 +1,4 @@
-import  sendEmail from "../utils/sendEmail";
+import   sendEmail from "../utils/sendEmail.js";
 
 const sendTestEmail = async (req, res) => {
   try {
