@@ -7,10 +7,10 @@ const {
   updateContact,
   deleteContact,
   importContacts,
-} = require("../controllers/contactController");
+} = require("../controllers/contactController.js");
 
-const { auth } = require("../middlewares/authMiddlewares");
-import  upload from "../middlewares/upload";
+import   auth  from "../middlewares/authMiddlewares.js";
+import  upload from "../middlewares/upload.js";
 
 router.post("/create", auth, createContact);
 router.get("/all", auth, getAllContacts);
