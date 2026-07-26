@@ -1,6 +1,6 @@
-const sendEmail = require("../utils/sendEmail");
+import  sendEmail from "../utils/sendEmail";
 
-exports.sendTestEmail = async (req, res) => {
+const sendTestEmail = async (req, res) => {
   try {
     const { email } = req.body;
 
@@ -24,3 +24,4 @@ exports.sendTestEmail = async (req, res) => {
     });
   }
 };
+export {sendTestEmail}
