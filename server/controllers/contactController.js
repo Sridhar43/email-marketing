@@ -122,8 +122,8 @@ const createContact = async (req, res) => {
 
 
 
-const fs = require("fs");
-const csv = require("csv-parser");
+import  fs from  "fs";
+import  csv from  "csv-parser";
 
 const importContacts = async (req, res) => {
   try {
