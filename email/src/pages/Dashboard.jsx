@@ -44,19 +44,19 @@ function Dashboard() {
           <div className="   bg-amber-300 rounded-xl shadow p-6">
             <FaUsers className="text-4xl text-blue-600 mb-3" />
             <h2 className="font-semibold text-black">Contacts</h2>
-            <h3 assName="text-2xl font-bold">{stats.totalContacts}</h3>
+            <h3 className="text-2xl font-bold">{stats.totalContacts}</h3>
           </div>
 
           <div className="bg-amber-300 rounded-xl shadow p-6">
             <FaEnvelope className="text-4xl text-green-600 mb-3" />
             <h2 className="font-semibold">Emails Sent</h2>
-            <h3 className="text-2xl font-bold">{stats.totalAudience}</h3>
+            <h3 className="text-2xl font-bold">{stats.totalAudiences}</h3>
           </div>
 
           <div className="bg-amber-300 rounded-xl shadow p-6">
             <FaBullhorn className="text-4xl text-purple-600 mb-3" />
             <h2 className="font-semibold ">Campaigns</h2>
-            <h3 className="text-2xl  font-bold">{stats.totalCampaign}</h3>
+            <h3 className="text-2xl  font-bold">{stats.totalCampaigns}</h3>
           </div>
 
         </div>
