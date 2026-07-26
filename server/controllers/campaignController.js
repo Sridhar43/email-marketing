@@ -32,8 +32,70 @@ const createCampaign = async (req, res) => {
   }
 };
 
+import { sendEmail } from "../utils/sendEmail"; // or your path
 
 const sendCampaign = async (req, res) => {
+  try {
+    console.log("send backend function called");
+    const { id } = req.params;
+
+    const campaign = await Campaign.findById(id);
+    console.log("campaign con", campaign);
+
+    if (!campaign) {
+      return res.status(404).json({
+        success: false,
+        message: "Campaign not found",
+      });
+    }
+
+    const audience = await Audience.findById(campaign.audience).populate("contacts");
+
+    if (!audience || !audience.contacts || audience.contacts.length === 0) {
+      return res.status(400).json({
+        success: false,
+        message: "No contacts found in this audience",
+      });
+    }
+
+    // Track results for each recipient
+    const sendResults = [];
+
+    for (const contact of audience.contacts) {
+      try {
+        const result = await sendEmail(
+          contact.email,
+          campaign.subject,
+          campaign.content
+        );
+        sendResults.push({ email: contact.email, status: "success", result });
+      } catch (emailErr) {
+        console.error(`Failed to send email to ${contact.email}:, emailErr`);
+        sendResults.push({ email: contact.email, status: "failed", error: emailErr.message });
+      }
+    }
+
+    campaign.status = "Sent";
+    await campaign.save();
+    console.log("saved", campaign);
+
+    return res.status(200).json({
+      success: true,
+      message: "Campaign process completed",
+      results: sendResults
+    });
+
+  } catch (error) {
+    // Return actual error message instead of generic string
+    console.error("Detailed Send Campaign Error:", error);
+
+    return res.status(500).json({
+      success: false,
+      message: error.message || "Server Error",
+    });
+  }
+};
+{/*const sendCampaign = async (req, res) => {
   try {
     console.log("send backend function called")
     const { id } = req.params;
@@ -96,7 +158,7 @@ const getAllCampaigns = async (req, res) => {
       message: "Server Error",
     });
   }
-};
+}; */}
  const updateCampaign = async (req, res) => {
   try {
     const { id } = req.params;
