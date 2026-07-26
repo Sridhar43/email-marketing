@@ -2,6 +2,7 @@ const Campaign = require("../models/Campaign"); // Make sure model path & casing
  const Audience=require("../models/Audience")
  const Contact=require("../models/Contact")
 
+import  sendEmail from "../utils/sendEmail.js"; // or your path
 // @desc    Create a new campaign
 // @route   POST /api/campaign/create
 // @access  Private (requires auth middleware)
@@ -32,7 +33,6 @@ const createCampaign = async (req, res) => {
   }
 };
 
-import { sendEmail } from "../utils/sendEmail.js"; // or your path
 
 const sendCampaign = async (req, res) => {
   try {
