@@ -1,4 +1,4 @@
-const Audience = require("../models/Audience");
+import  Audience from "../models/Audience.js";
 
 exports.createAudience = async (req, res) => {
   try {
