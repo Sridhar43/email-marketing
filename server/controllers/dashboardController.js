@@ -1,6 +1,6 @@
-const Contact = require("../models/Contact");
-const Audience = require("../models/Audience");
-const Campaign = require("../models/Campaign");
+import  Contact from "../models/Contact.js"
+ import Audience from "../models/Audience.js";
+import  Campaign from "../models/Campaign.js";
 
 exports.getDashboardStats = async (req, res) => {
   try {

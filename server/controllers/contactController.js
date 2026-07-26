@@ -1,4 +1,4 @@
-const Contact = require("../models/Contact");
+import  Contact from "../models/Contact.js";
 
 const streamifier = require("streamifier");
 
@@ -176,6 +176,6 @@ fs.createReadStream(req.file.path)
 };
 
 // Exported as an object to match the destructuring import
-module.exports = { createContact,updateContact,getAllContacts ,deleteContact,importContacts};
+export { createContact,updateContact,getAllContacts ,deleteContact,importContacts};
 
 

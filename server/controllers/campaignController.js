@@ -1,6 +1,7 @@
-const Campaign = require("../models/Campaign.js"); // Make sure model path & casing match
- const Audience=require("../models/Audience.js")
- const Contact=require("../models/Contact.js")
+import  Campaign from "../models/Campaign.js";
+import  Audience from "../models/Audience.js";  // Make sure model path & casing match
+
+ import Contact from"../models/Contact.js"
 
 import  sendEmail from "../utils/sendEmail.js"; // or your path
 // @desc    Create a new campaign
@@ -226,7 +227,7 @@ const deleteCampaign = async (req, res) => {
   }
 };
 // IMPORTANT: Exporting as an object allows named imports in compaignRoutes.js
-module.exports = {
+export {
   createCampaign,
   sendCampaign,
   getAllCampaigns,
