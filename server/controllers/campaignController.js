@@ -1,7 +1,7 @@
 const Campaign = require("../models/Campaign"); // Make sure model path & casing match
  const Audience=require("../models/Audience")
  const Contact=require("../models/Contact")
-  const sendEmail=require("../utils/sendEmail")
+
 // @desc    Create a new campaign
 // @route   POST /api/campaign/create
 // @access  Private (requires auth middleware)
