@@ -18,6 +18,6 @@ router.put("/update/:id", auth, updateContact);
 router.delete("/update/:id", auth, deleteContact);
 router.post("/import", auth, upload.single("file"), importContacts);
 
-module.exports = router;
+export default router;
 
 
