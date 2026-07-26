@@ -1,11 +1,11 @@
-const dns =require('dns');
+import dns from 'dns';
 dns.setServers(['8.8.8.8','1.1.1.1']);
 
 
 import  express from "express";
 import dotenv from "dotenv";
 import connectDB from  "./config/database.js";
- import cors from ("cors")
+ import cors from "cors"
 
  
 
