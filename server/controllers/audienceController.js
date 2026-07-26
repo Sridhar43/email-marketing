@@ -1,6 +1,6 @@
 import  Audience from "../models/Audience.js";
 
-exports.createAudience = async (req, res) => {
+export const createAudience = async (req, res) => {
   try {
     const { name, description, contacts } = req.body;
 
@@ -27,7 +27,7 @@ exports.createAudience = async (req, res) => {
 
 
 
-exports.getAudienceById = async (req, res) => {
+export const getAudienceById = async (req, res) => {
   try {
     const audience = await Audience.findById(req.params.id)
       .populate("contacts");
@@ -51,7 +51,7 @@ exports.getAudienceById = async (req, res) => {
     });
   }
 };
-exports.getAllAudiences = async (req, res) => {
+export const getAllAudiences = async (req, res) => {
   try {
     const audiences = await Audience.find({
       owner: req.user.id,
@@ -70,8 +70,8 @@ exports.getAllAudiences = async (req, res) => {
     });
   }
 };
-exports.updateAudience = async (req, res) => {
-  try {
+export const updateAudience = async (req, res) => {
+  try { 
     const { id } = req.params;
 
     const audience = await Audience.findOneAndUpdate(
@@ -99,7 +99,7 @@ exports.updateAudience = async (req, res) => {
     });
   }
 };
-exports.deleteAudience = async (req, res) => {
+export const deleteAudience = async (req, res) => {
   try {
     const { id } = req.params;
 
